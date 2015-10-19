@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>Ambient Light API</title>
+</head>
+<body>
+	<p>API de Luz Ambiente.</p>
+
+	<p>Os eventos de luz ambiente são uma maneira prática de fazer uma página web ou um aplicativo identificar qualquer mudança na intensidade da luz. Isso permite reagir a essa mudança, por exemplo, alterando o contraste de cores da interface do usuário (UI) ou alterando a exposição necessária para tirar uma foto.</p>
+
+	<p>Nível de luz ambiente: <span id="nvl"></span></p>
+	<p>Intensidade: <span id="its"></span></p> 
+
+	<script type="text/javascript">
+
+	//evento chamado sempre que há alteração no nível de iluminação
+	window.addEventListener('devicelight', function(event) {
+		
+		document.getElementById('nvl').innerHTML = event.value;
+
+		//o valor obtido é entre 0 e 100
+		if (event.value < 50) {
+			document.getElementById('its').innerHTML = "darklight";
+		} else {			
+			document.getElementById('its').innerHTML = "brightlight";
+		}
+	});
+	
+	</script>
+</body>
+</html>

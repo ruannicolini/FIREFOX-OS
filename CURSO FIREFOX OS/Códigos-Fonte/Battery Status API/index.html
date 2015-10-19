@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>Battery Status API</title>
+</head>
+<body>
+	<p>API de Status de Bateria.</p>
+	<p>A API do status da bateria, mais frequentemente referida como a API de bateria, fornece informações sobre o nível de carga da bateria do sistema e permite que o usuário seja notificado por eventos que são enviados quando ocorrem mudanças de nível da bateria. Isso pode ser usado para ajustar o uso de recursos de seu aplicativo para reduzir o consumo da bateria quando a bateria estiver fraca, ou para salvar as alterações antes que a bateria acabe, a fim de evitar a perda de dados.</p>
+
+	<p>Nível da Bateria: <span id="sts"></span></p>
+	<p id='charge'></p> 
+
+	<script type="text/javascript">
+
+	//recupera as informações sobre a bateria
+	var battery = navigator.battery || navigator.mozBattery || navigator.webkitBattery;
+
+	//função a ser executada a cada chamada dos eventos de mudança de nivel da bateria e estado do carregamento
+	function updateBatteryStatus() {
+		document.getElementById('sts').innerHTML = battery.level * 100 + " %";
+		
+		if (battery.charging) {
+			document.getElementById('charge').innerHTML = "Bateria carregando..."; 
+		}else{
+			document.getElementById('charge').innerHTML= ""; 
+		}
+	}
+
+	//evento da mudança do estado de carregamento
+	battery.addEventListener("chargingchange", updateBatteryStatus);
+	//evento da mudança do nível de carga da bateria
+	battery.addEventListener("levelchange", updateBatteryStatus);
+	updateBatteryStatus();
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+    {
+        "version": "0.1",
+        "name": "CRONOANALISE",
+        "description": "Ruan Nicolini - CRONOANÁLISE!",
+        "launch_path": "index.html",
+        "icons": {
+            "512": "/img/icon-512.png",
+            "128": "/img/icon-128.png"
+        },
+        "developer": {
+            "name": "RUAN NICOLINI",
+            "url": "http://your-homepage-here.org"
+        },
+        "default_locale": "pt"
+    }
+

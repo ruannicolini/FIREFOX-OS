@@ -1,0 +1,31 @@
+    {
+        "version": "0.1",
+        "name": "Ola Mundo",
+        "description": "Ruan Nicolini - Olá Mundo!",
+        "launch_path": "/index.html",
+        "icons": {
+            "16": "/imgs/icons/wi16.png",
+            "48": "/imgs/icons/wi48.png",
+            "128": "/imgs/icons/wi128.png"
+        },
+        "developer": {
+            "name": "Ruan Nicolini",
+            "url": "http://willemallan.com.br"
+        },
+        "installs_allowed_from": ["*"],
+        "locales": {
+            "es": {
+                "description": "Willem Allan - Blog posts",
+                "developer": {
+                    "url": "http://willemallan.com.br"
+                }
+            },
+            "it": {
+                "description": "Willem Allan - Blog posts",
+                "developer": {
+                    "url": "http://willemallan.com.br"
+                }
+            }
+        },
+        "default_locale": "en"
+    }

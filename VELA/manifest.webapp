@@ -1,0 +1,22 @@
+{
+	"name": "Vela",
+	"version": "1.0",
+	"description": "A simple candle toy",
+	"launch_path": "/app.html",
+	"permissions": 
+	{
+		
+	},
+	"developer": {
+		"name": "Lucas Covre Delboni",
+		"url": "https://www.facebook.com/lucas.delboni.1"
+	},
+	"icons": {
+		"60": "apagada.jpg",
+		"128": "acesa1.jpg"
+	}
+}
+
+
+
+

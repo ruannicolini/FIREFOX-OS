@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>Geolocation API</title>
+</head>
+<body>
+	<p>API de Geolocalização.</p>
+
+	<p>A API de geolocalização permite que o usuário forneça sua localização para aplicações web, se assim o desejar. Por razões de privacidade, é solicitada a permissão ao usuário  para reportar informações de localização.</p>
+
+	<p><button onclick="geoFindMe()">Minha Localização</button></p>
+	<div id="out"></div>
+
+	<script type="text/javascript">
+
+	function geoFindMe() {
+		var output = document.getElementById("out");
+
+		//verifica se o navegador suporta ou não o uso da API de geolocalização
+		if (!navigator.geolocation){
+			output.innerHTML = "<p>Geolocation não é suportada pelo browser utilizado.</p>";
+			return;
+		}
+
+		//função executada caso a localização do usuário seja obtida com sucesso
+		function success(position) {
+			//recupera as coordenadas do usuário
+			var latitude  = position.coords.latitude;
+			var longitude = position.coords.longitude;
+
+			output.innerHTML = '<p>Latitude: ' + latitude + '° <br>Longitude: ' + longitude + '°</p>';
+
+			//cria uma imagem estática do mapa
+			var img = new Image();
+			img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+			output.appendChild(img);
+		};
+		//caso a função de localização retorne um erro, essa função será executada
+		function error() {
+			output.innerHTML = "Não foi possível obter a localização.";
+		};
+
+		output.innerHTML = "<p>Localizando...</p>";
+
+		//função da API que obtém a geolocalização do usuário
+		navigator.geolocation.getCurrentPosition(success, error);
+	}
+	
+	</script>
+</body>
+</html>

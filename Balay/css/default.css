@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'Yanone Kaffeesatz';
+    src: url(../fonts/YanoneKaffeesatz-Regular.otf);
+}
+
+body {
+	font-family: 'Yanone Kaffeesatz', sans;
+	background: url('/img/background.jpg');
+}
+
+.table {
+	background: rgba(255,255,255,.9);
+}
+
+.logo h1 {
+	font-size: 20px;
+	margin-top: 15px;
+}
+
+.content {
+	margin-top: 65px;
+	padding: 0 10px;
+}
+.bem_vindo {
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+}
+
+/**************************************************************************
+**************************************************************************/
+form {
+	margin-top: 10px;
+	text-align: center;
+}
+form .row {
+	margin-bottom: 15px;
+}
+input, label {
+	text-transform: uppercase;
+}
+input, select {
+	text-align: center;
+}
+
+.btn_form {
+	border: 2px solid #222;
+	background: none;
+	text-align: center;
+	font-size: 30px;
+	height: 60px;
+	width: 60px;
+	border-radius: 30px;
+	margin-top: 10px;
+}
+.btn_form .glyphicon {
+	color: #222;
+}
+
+.cronometro .mostrar_tempo {
+	text-align: center;
+	font-size: 35px;
+	background: rgba(255,255,255,.9);
+	border-radius: 3px;
+	padding: 10px 0;
+	margin-bottom: 10px;
+}
+
+.cronometro .btn_form {
+	font-size: 50px;
+	height: 90px;
+	width: 90px;
+	border-radius: 50px;
+	margin: 10px 0 20px;
+}
+
+
+.botao {
+	background: rgba(255,255,255, .9);
+	text-align: center;
+	color: #222;
+	padding: 10px 0;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+
+.botao h3 {
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 18px;
+}

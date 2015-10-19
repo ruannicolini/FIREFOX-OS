@@ -1,0 +1,85 @@
+
+body {
+
+  background-color : #F2F1F6;
+  padding-top      : 5%;
+}
+
+form {
+  text-align : center;
+}
+
+#input-Login {
+  display    : block;
+  height     : 48px;
+  margin     : 0 auto 17px;
+  text-align : center;
+  width      : 80%;
+  border-radius : 5px;
+}
+
+
+.user , .pass {
+  font-size      : 20px;
+  background: -moz-linear-gradient(top,  rgba(213,213,213,1) 0%, rgba(213,213,213,1) 13%, rgba(215,215,215,1) 30%, rgba(222,222,222,1) 71%, rgba(221,221,221,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(213,213,213,1) 0%,rgba(213,213,213,1) 13%,rgba(215,215,215,1) 30%,rgba(222,222,222,1) 71%,rgba(221,221,221,1) 100%);
+  
+  box-shadow: inset 0 0 3px 1px #ccc; 
+  
+  border-top : 1px solid #aaa;
+  border-bottom : 1px solid #eee;
+  
+  color          : #555;
+}
+
+.btn {
+  margin-bottom : 30px;
+  color         : #fefefe;
+  text-shadow   : 0 1px 0 #777;
+  border        : 1px solid #b6733c;
+  box-shadow    : inset 0 0 1px 1px #ffcb9c;
+  text-transform : uppercase;
+  background: -moz-linear-gradient(top,  rgba(249,159,107,1) 0%, rgba(238,148,96,1) 57%, rgba(236,146,94,1) 89%, rgba(232,144,94,1) 94%, rgba(234,146,96,1) 96%, rgba(244,161,111,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(249,159,107,1) 0%,rgba(238,148,96,1) 57%,rgba(236,146,94,1) 89%,rgba(232,144,94,1) 94%,rgba(234,146,96,1) 96%,rgba(244,161,111,1) 100%);
+  
+  font-size      : 17px;
+}
+
+
+
+ /* ============= RELÓGIO LOGIN =============== */
+.watch {
+  width: 110px;
+  height: 110px;
+  background-color: transparent;
+  position: relative;
+  margin: 30px auto;
+  border: 5px solid white;
+  border-radius: 100px;
+}
+
+.minutes-hand {
+  width: 5px;
+  height: 50px;
+  border-radius: 3px;
+  background-color: white;
+  position: absolute;
+  top: 7px;
+  left: 52.5px;
+  -webkit-animation: watch 2s linear 0s infinite paused;
+  animation: watch 2s linear 0s infinite paused;
+  transform-origin: 2px 47.5px;
+}
+
+.hours-hand {
+  width: 5px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: white;
+  position: absolute;
+  top: 16px;
+  left: 52.5px;
+  -webkit-animation: watch 5s linear 0s infinite paused;
+  animation: watch 5s linear 0s infinite paused;
+  transform-origin: 2px 37.5px;
+}

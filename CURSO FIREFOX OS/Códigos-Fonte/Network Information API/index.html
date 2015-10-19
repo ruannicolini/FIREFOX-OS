@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>Network Informations API</title>
+</head>
+<body>
+	<p>API de informações de rede.</p>
+
+	<p>Tipo de conexão: <span id="type"></span></p>
+	<p>Largura de Banda: <span id="cbw"></span> Mb/s</p>
+	<p>Status: <span id="status"></span></p>
+
+	<p>Or tipos de conexão podem ser:</p>
+
+	<ul>
+		<li>bluetooth: usando o bluetooth do dispositivo</li>
+		<li>cellular: usando EDGE, 3G, 4G, etc...</li>
+		<li>ethernet: usando uma conexão de rede cabeada</li>
+		<li>none: não foi possível verificar a rede para obter o tipo de conexão</li>
+		<li>wifi: usando uma conexão de rede wifi</li>
+		<li>other: usando uma conexão de um tipo diferente dos listados acima</li>
+	</ul>
+
+	<script type="text/javascript">
+	//Recupera as informações da conexão
+	var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+
+	//verifica o tipo de conexão está sendo utilizada
+	document.getElementById('type').innerHTML  = navigator.connection.type;
+	//verifica o valor da largura de banda
+	document.getElementById('cbw').innerHTML  = connection.bandwidth;
+	//verifica se o navegador está operando em modo online ou offline
+	document.getElementById('status').innerHTML  = navigator.onLine ? "online" : "offline";
+	
+	</script>
+</body>
+</html>

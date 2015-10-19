@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+
+    <title>Balay Mobile</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/default.css">
+  </head>
+
+<body>
+
+  <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="col-xs-6 logo">
+              <h1>CRONOANÁLISE</h1>
+          </div>
+      </div>
+
+      <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">About</a></li>
+          </ul>
+      </div>
+  </nav>
+
+  <div class="content">
+    <div class="bem_vindo container">
+      <h3>Bem vindo ao Balay</h3>
+      <p>Sistema de Cronoanálise Mobile</p>
+    </div>
+
+    <form class="container">
+      <div class="row">
+        <label>Usuário</label>
+        <input type="text" class="form-control input-lg">
+      </div>
+      <div class="row">
+        <label>Senha</label>
+        <input type="password" class="form-control input-lg">
+      </div>
+      <div class="row">
+        <button type="button" class="btn_form"><span class="glyphicon glyphicon-ok"></span></button>
+      </div>
+    </form>
+  </div>
+
+  <div class="content">
+    <div class="menu_principal container">
+      <div class="row">
+        <div class="botao">
+          <h3>Cronometria</h3>
+          <span>Texto secundário</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="botao">
+          <h3>Dados</h3>
+          <span>Texto secundário</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="botao">
+          <h3>Configurações</h3>
+          <span>Texto secundário</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="cronometro container">
+      <div class="row">
+        <div class="mostrar_tempo">
+            00:00:56
+        </div>
+      </div>
+
+      <div class="row">
+        <table class="table table-bordered tabela_tempo">
+          <thead>
+            <tr>
+              <th>T</th>
+              <th>Tempo</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tr>
+            <th>T1</th>
+            <th>00:00:15252</th>
+            <th>00,15252</th>
+          </tr>
+          <tr>
+            <th>T2</th>
+            <th>00:00:15252</th>
+            <th>00,15252</th>
+          </tr>
+          <tr>
+            <th>T1</th>
+            <th>00:00:15252</th>
+            <th>00,15252</th>
+          </tr>
+        </table>
+      </div>
+
+      <div class="row text-center">
+        <button type="button" class="btn_form"><span class="glyphicon glyphicon-play"></span></button>
+      </div>
+
+      <div class="row">
+        <div class="botao">
+          <h3>Inciar/Parar</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="botao">
+          <h3>Finalizar Cronometragem</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="content">
+    <form class="container">
+      <div class="row">
+        <label>Cronometrista</label>
+        <select class="form-control">
+          <option value="alta">Alta</option>
+          <option value="media">Média</option>
+          <option value="baixa">Baixa</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Operador</label>
+        <select class="form-control">
+          <option value="alta">Alta</option>
+          <option value="media">Média</option>
+          <option value="baixa">Baixa</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Produto</label>
+        <select class="form-control">
+          <option value="alta">Alta</option>
+          <option value="media">Média</option>
+          <option value="baixa">Baixa</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Operação</label>
+        <select class="form-control">
+          <option value="alta">Alta</option>
+          <option value="media">Média</option>
+          <option value="baixa">Baixa</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Tecido</label>
+        <select class="form-control">
+          <option value="alta">Alta</option>
+          <option value="media">Média</option>
+          <option value="baixa">Baixa</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <button type="button" class="btn_form"><span class="glyphicon glyphicon-ok"></span></button>
+      </div>
+    </form>
+  </div>
+
+  <div class="content">
+    <form class="container">
+      <div class="row">
+        <label>Ritmo</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="row">
+        <label>Número de peças</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="row">
+        <label>Comprimento</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="row">
+        <label>Tolerância</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="row">
+        <label>Data</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="row">
+        <label>Referência</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="row">
+        <label>Número de ocorrência</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="row">
+        <button type="button" class="btn_form"><span class="glyphicon glyphicon-ok"></span></button>
+      </div>
+    </form>
+  </div>
+
+</body>
+
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/custom.js"></script>
+
+</html>

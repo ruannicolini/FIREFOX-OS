@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>Proximity API</title>
+</head>
+<body>
+	<p>API de Proximidade.</p>
+
+	<p>Os eventos de proximidade são uma maneira prática de saber quando um usuário está perto de um dispositivo. Estes eventos permitem reagir a essa mudança, por exemplo, desligar a tela de um smartphone quando o usuário está em uma chamada telefônica com o dispositivo perto de seu ouvido.</p>
+
+	<p>O evento DeviceProximityEvent fornece uma correspondência exata para a distância entre o dispositivo e o objeto através de sua propriedade de valor. Ele também fornece a distância mais próxima e mais distante do dispositivo, é capaz de detectar algo através de suas propriedades mínimo e máximo.</p>
+
+     <p>O evento UserProximityEvent fornece uma aproximação grosseira da distância, expressa através de um boolean. A propriedade UserProximityEvent.near é verdadeiro se o objeto está perto ou false se o objeto está longe.</p>
+
+	<script type="text/javascript">
+
+	//evento disparado nas mudanças da proximidade do usuário em relação à tela
+	//pode ser utilizado também o evento deviceproximity, com as propriedades max, min e value
+	window.addEventListener('userproximity', function(event) {
+		if (event.near) {
+		    // desliga o ecrã
+		    navigator.mozPower.screenEnabled = false;
+		} else {
+		    // liga o ecrã
+		    navigator.mozPower.screenEnabled = true;
+		}
+	});
+
+	</script>
+</body>
+</html>

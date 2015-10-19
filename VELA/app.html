@@ -1,0 +1,47 @@
+<!DOCTYPE
+<html>
+	<head>
+
+		<style>
+			img.ex1{
+				position:absolute;
+				bottom:0px;
+				z-index: 1;
+			}
+		</style>
+	
+		<title> segundo APP </title>
+		<script>
+			function botao(){
+				document.getElementById("acesa").src ="acesa.gif";
+			}
+			function changeImage() {
+				document.getElementById("acesa").src = "apagada1.jpg";
+			}
+			
+		</script>
+	</head>
+
+	<body>
+		
+		<body style="background-color:black;"></body>
+
+		<div id="vela">
+	
+	
+			<img  id= "acesa" class= "ex1" src="acesa.gif" width="350" height="320" alt="vela acesa" usemap="#velamap">
+			<img  id= "acesa" class= "ex1"  src="apagada1.jpg" width="350" height="320" alt="vela acesa" usemap="#velamap" style="display:none;">
+				<map name="velamap">
+					<area shape="rect" onclick="changeImage()" coords="120,50,200,270"  width="200" height="200" alt="Vela">
+				</map>
+		</div>
+		
+		<button onclick="botao()">Acender</button>
+		
+		
+
+
+	</body>
+
+</html>
+

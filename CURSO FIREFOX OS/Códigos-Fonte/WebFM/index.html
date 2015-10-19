@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>WebFM API</title>
+</head>
+<body>
+	<p>API de Rádio FM.</p>
+
+	<p>A API WebFM fornece acesso ao dispositivo de rádio FM. Ele permite que você ligue e desligue o rádio e alterne entre as estações. Esta API está disponível através da propriedade navigator.mozFMRadio que é um objeto FMRadio.</p>
+
+	<script type="text/javascript">
+
+	//LIGANDO E DESLIGANDO O RÁDIO
+	
+	// Informando a frequência da rádio a ser tocada
+	var frequency = 99.1;
+	var radio = navigator.mozFMRadio;
+
+	//verifica se a antena de rádio está disponível
+	if (radio.antennaAvailable) {
+		//ativa o rádio já na frequência especificada
+	  radio.enable(frenquency);
+	} else {
+	  alert("Você precisa conectar o fone de ouvido.");
+	}
+
+	//evento executado para verificação da mudança da disponibilidade da antena
+	radio.addEventListener('antennaavailablechange', function () {
+	  if (radio.antennaAvailable) {
+	    radio.enable(frenquency);
+	  } else {
+	    radio.disable();
+	  }
+	})
+
+	</script>
+</body>
+</html>

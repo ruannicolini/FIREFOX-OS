@@ -1,0 +1,42 @@
+Desenvolvimento de aplicativos para Firefox OS
+
+
+O que é o Desafio APIs?
+
+- Criar aplicativos usando cada uma das APIs passadas durante o curso
+- Os melhores aplicativos serão utilizados como exemplo durante as aulas sobre a distribuição de aplicativos, e enviados à Marketplace
+
+
+Como funciona?
+
+- Será disponibilizado um código bruto de cada API no Github, na pasta "código
+- Faça um “fork" do repositório “Desafio APIs"
+- Após fazer o "fork" do repositório, crie um diretório dentro do que foi clonado com o seu nome, e coloque dentro dele todos os aplicativos que criar
+- Depois de criar os aplicativos, faça um pull request para o repositório oficial
+
+
+Até quando posso enviar os aplicativos?
+
+- Os aplicativos poderão ser enviados enquanto estivermos estudando as APIs
+- A data do término será avisada com antecedência
+
+
+Quem avaliará os aplicativos? 
+
+- Os aplicativos serão avaliados por mim e pela equipe da School of Net, nossa parceira nesse curso.
+
+
+Linguagens utilizadas no desenvolvimento dos aplicativos
+
+- HTML para estruturar as páginas
+- CSS para estilizar
+- JavaScript para fazer os efeitos e interações
+
+
+Links e Contato
+
+http://www.cursofirefoxos.com.br
+https://www.facebook.com/cursofirefoxos
+http://bit.ly/palestraFFOS
+https://github.com/jlamim/curso-firefoxos
+suporte@cursofirefoxos.com.br
