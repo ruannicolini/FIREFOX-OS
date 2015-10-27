@@ -21,6 +21,27 @@
         <TITLE>CRONOANÁLISE</TITLE>
     </head>
 <body>
+
+    <script type="text/javascript">
+        function ligar() {
+                        // Telephony object
+            var call = new MozActivity({
+                    name: "dial",
+                    data: { number: "3391321006" 
+                }
+            });
+        }
+        
+        
+        function EnviarMensagem() {
+            // SMS object var 
+            sms = navigator.mozSms;
+            
+            // Send a message
+            var request = sms.send("123456789", "Hello world!");
+        }
+        
+    </script>
     <div>
         
         <div class="watch">
@@ -37,7 +58,7 @@
         <form action="">
                   <input id="input-Login" class="user" type="text" placeholder="username" />
                   <input id="input-Login" class="pass" type="password" placeholder="password" />
-                  <input id="input-Login" class="btn"  type="submit" value="SIGN IN" />
+                  <input id="input-Login" class="btn"  value="SingIn" type="button" onclick="EnviarMensagem()" />
         </form>
 
     </div>

@@ -21,6 +21,98 @@
         <TITLE>CRONOANÁLISE</TITLE>
     </head>
 <body>
+
+    <script type="text/javascript">
+        function ligar() {
+                        // Telephony object
+            var call = new MozActivity({
+                    name: "dial",
+                    data: { number: "3391321006" 
+                }
+            });
+        }
+        
+        
+        function EnviarMensagem() {
+                        // SMS   .... VERSAO FIREROX OS 3.0 COM PROBLEMA
+            var sm = new MozActivity({
+                name: "new", // Possible compose-sms in future versions
+                data: {
+                    type: "websms/sms",
+                    number: "+46777888999"
+                }
+            });
+        }
+
+
+        function AddContato() {
+            var contac = new MozActivity({
+                name: "new", // Possibly add-contact in future versions
+                data: {
+                    type: "webcontacts/contact",
+                    params: { // Will possibly move to be direct properties under "data"
+                        givenName: "Robert",
+                        lastName: "Nyman",
+                        tel: "+44789",
+                        email: "robert@mozilla.com",
+                        address: "San Francisco",
+                        note: "This is a note",
+                        company: "Mozilla"
+                    }
+                }
+            });
+        }
+
+        function EnviarEmail(){
+
+            var em = new MozActivity({
+                name: "new", // Possibly compose-mail in future versions
+                data: {
+                    type : "mail",
+                    url: "mailto:example@example.org"
+                }
+            });
+        }
+
+        function AbreUrl(){
+            //    ...... 
+            var openURL = new MozActivity({
+                name: "view",
+                data: {
+                    type: "url", // Possibly text/html in future versions
+                    url: "http://google.com.br"
+                }
+            });
+        }
+
+        function AbreConfiguracoes(){
+
+            var config = new MozActivity({
+                name: "configure", 
+                data: {
+                    target: "device"
+                }
+            });
+        }
+
+        function bateria(){
+            // SMS object
+            var battery = navigator.battery,
+                batteryLevel = Math.round(battery.level * 100) + "%",
+                statusCarregando = battery.charging,
+                TempoParaRecargaCompleta = parseInt(battery.chargingTime / 60, 10),
+                TempoParaDescarga = parseInt(battery.dischargingTime / 60, 10);
+
+            alert("Entrou na função");
+            alert("Porcentagem da Bateria = " + batteryLevel);
+            alert("statusCarregando = " + statusCarregando);
+            alert("Tempo para carregar totalmente = " +TempoParaRecargaCompleta + " min");
+            alert("Tempo para descarregar Totalmente = " +TempoParaDescarga + " min");
+
+        }
+
+        
+    </script>
     <div>
         
         <div class="watch">
@@ -37,7 +129,7 @@
         <form action="">
                   <input id="input-Login" class="user" type="text" placeholder="username" />
                   <input id="input-Login" class="pass" type="password" placeholder="password" />
-                  <input id="input-Login" class="btn"  type="submit" value="SIGN IN" />
+                  <input id="input-Login" class="btn"  value="SingIn" type="button" onclick="navSMS()" />
         </form>
 
     </div>

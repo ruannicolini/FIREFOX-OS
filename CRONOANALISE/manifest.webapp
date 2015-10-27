@@ -2,11 +2,37 @@
         "version": "0.1",
         "name": "CRONOANALISE",
         "description": "Ruan Nicolini - CRONOANÁLISE!",
-        "launch_path": "index.html",
+        "launch_path": "/index.html",
         "icons": {
             "512": "/img/icon-512.png",
             "128": "/img/icon-128.png"
         },
+        "permissions": {
+            "desktop-notification": {
+              "description": "To show notifications"
+            },
+            "geolocation": {
+              "description": "Marking out user location"
+            },
+            "camera": {
+                "description": "Required for accessing cameras on the device."
+            },
+            "alarms": {
+              "description": "Scheduling alarms"
+            }
+          },
+        "activities": {
+            "view": {
+                "filters": {
+                    "type": "url",
+                    "url": {
+                        "required": true,
+                        "regexp":"/^https?:/"
+                    }
+                }
+            }
+        },
+
         "developer": {
             "name": "RUAN NICOLINI",
             "url": "http://your-homepage-here.org"

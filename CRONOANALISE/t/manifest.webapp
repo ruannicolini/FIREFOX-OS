@@ -8,6 +8,9 @@
     "60": "/icons/icon60x60.png",
     "128": "/icons/icon128x128.png"
   },
+  "permissions": {
+    "storage": { "description": "Required for storing and retrieving notes." }
+  }, 
   "developer": {
     "name": "Your name",
     "url": "http://example.com"
