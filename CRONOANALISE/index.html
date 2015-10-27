@@ -86,13 +86,18 @@
         }
 
         function AbreConfiguracoes(){
-
+               
             var config = new MozActivity({
                 name: "configure", 
                 data: {
                     target: "device"
                 }
             });
+            
+            /*
+            var settings = window.navigator.mozSettings;
+            settings.getLock().set({"background": "pretty.png"});
+            */
         }
 
         function bateria(){
@@ -111,6 +116,18 @@
 
         }
 
+        function geolocalizacao(){
+            alert("oi1");
+            navigator.geolocation.getCurrentPosition(function(position) {
+                alert("Entrou");
+                alert(position.coords.latitude);
+                alert(position.coords.longitude);
+
+            }
+
+            );
+            
+        }
         
     </script>
     <div>
@@ -129,7 +146,7 @@
         <form action="">
                   <input id="input-Login" class="user" type="text" placeholder="username" />
                   <input id="input-Login" class="pass" type="password" placeholder="password" />
-                  <input id="input-Login" class="btn"  value="SingIn" type="button" onclick="navSMS()" />
+                  <input id="input-Login" class="btn"  value="SingIn" type="button" onclick="geolocalizacao()" />
         </form>
 
     </div>
