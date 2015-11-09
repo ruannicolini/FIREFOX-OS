@@ -80,7 +80,7 @@
                 name: "view",
                 data: {
                     type: "url", // Possibly text/html in future versions
-                    url: "http://google.com.br"
+                    url: "http://youtube.com.br"
                 }
             });
         }
@@ -108,7 +108,7 @@
                 TempoParaRecargaCompleta = parseInt(battery.chargingTime / 60, 10),
                 TempoParaDescarga = parseInt(battery.dischargingTime / 60, 10);
 
-            alert("Entrou na função");
+            
             alert("Porcentagem da Bateria = " + batteryLevel);
             alert("statusCarregando = " + statusCarregando);
             alert("Tempo para carregar totalmente = " +TempoParaRecargaCompleta + " min");
@@ -116,19 +116,108 @@
 
         }
 
-        function geolocalizacao(){
-            alert("oi1");
-            navigator.geolocation.getCurrentPosition(function(position) {
-                alert("Entrou");
-                alert(position.coords.latitude);
-                alert(position.coords.longitude);
 
+        function geolocalizacao(){
+            
+            var output = document.getElementById("mapa");
+
+            //verifica se o navegador suporta ou não o uso da API de geolocalização
+            if (!navigator.geolocation){
+                output.innerHTML = "<p>Geolocation não é suportada pelo browser utilizado.</p>";
+                return;
             }
 
-            );
-            
+            //função executada caso a localização do usuário seja obtida com sucesso
+            function success(position) {
+                //recupera as coordenadas do usuário
+                var latitude  = position.coords.latitude;
+                alert("Latitude = " + latitude);
+                var longitude = position.coords.longitude;
+                alert("Longitude = " + longitude);
+
+                output.innerHTML = '<p>Latitude: ' + latitude + '° <br>Longitude: ' + longitude + '°</p>';
+
+                //cria uma imagem estática do mapa
+                var img = new Image();
+                img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+                output.appendChild(img);
+            };
+
+            //caso a função de localização retorne um erro, essa função será executada
+            function error() {
+                output.innerHTML = "Não foi possível obter a localização.";
+            };
+
+            output.innerHTML = "<p>Localizando...</p>";
+
+            //função da API que obtém a geolocalização do usuário
+            navigator.geolocation.getCurrentPosition(success, error);    
+        }
+
+        function notificacao(){
+            texto = 'o';
+            if ("Notification" in window) {
+                // Firefox OS 1.1 and higher
+                if (Notification.permission !== "denied") {
+                    Notification.requestPermission(function (permission) {
+                        if(!("permission" in Notification)) {
+                            Notification.permission = permission;
+                        }
+                    });
+                }
+
+                if (Notification.permission === "granted") {
+                    new Notification("See this", {
+                        body : "This is a notification"
+                    });
+                }
+            }else {
+                // Firefox OS 1.0
+                var notify = navigator.mozNotification.createNotification(
+                    "See this",
+                    "This is a notification"
+                );
+                notify.show();
+            }
+        }
+
+        function abreVideo(){
+            new MozActivity({
+                name: "open",
+                data: {
+                    type: [
+                      "video/webm",
+                      "video/mp4",
+                      "video/3gpp",
+                      "video/youtube"
+                    ],
+                    url: "http://v2v.cc/~j/theora_testsuite/320x240.ogg"
+                }
+            });
         }
         
+
+        function Alarme(){
+            // Data e hora do alarme
+            var myDate  = new Date("Nov 03, 2015 14:50:00");
+
+            // Informação passada com o alarme
+            var data    = {
+              foo: "bar"
+            }
+
+            // A string "honorTimezone" fará com que o alarme respeite o fuso-horário
+            var request = navigator.mozAlarms.add(myDate, "honorTimezone", data);
+
+            request.onsuccess = function () {
+              console.log("O alarme foi programado");
+            };
+
+            request.onerror = function () { 
+              console.log("Ocorreu um erro: " + this.error.name);
+            };
+        }
     </script>
     <div>
         
@@ -144,9 +233,11 @@
         </div>
 
         <form action="">
-                  <input id="input-Login" class="user" type="text" placeholder="username" />
-                  <input id="input-Login" class="pass" type="password" placeholder="password" />
-                  <input id="input-Login" class="btn"  value="SingIn" type="button" onclick="geolocalizacao()" />
+                <input id="input-Login" class="user" type="text" placeholder="username" />
+                <input id="input-Login" class="pass" type="password" placeholder="password" />
+                <input id="input-Login" class="btn"  value="SingIn" type="button" onclick="AbreUrl()" />
+                <div id="mapa"></div>
+
         </form>
 
     </div>
